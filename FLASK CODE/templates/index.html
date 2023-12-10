@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumpy Skin Disease Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+        }
+
+        input {
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lumpy Skin Disease Prediction</h1>
+        <form action="/predict" method="post">
+            <label for="cloud_cover">Monthly Cloud Cover (%): </label>
+            <input type="number" name="cloud_cover" required><br>
+
+            <label for="temperature_range">Diurnal Temperature Range (°C): </label>
+            <input type="number" name="temperature_range" required><br>
+
+            <label for="frost_day_frequency">Frost Day Frequency (per month): </label>
+            <input type="number" name="frost_day_frequency" required><br>
+
+            <label for="evapotranspiration">Potential Evapotranspiration (mm/day): </label>
+            <input type="number" name="evapotranspiration" required><br>
+
+            <label for="precipitation">Precipitation (mm/month): </label>
+            <input type="number" name="precipitation" required><br>
+
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.querySelector('form');
+
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+                // Additional JavaScript logic if needed
+                form.submit();
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
